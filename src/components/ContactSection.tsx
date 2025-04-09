@@ -37,7 +37,11 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h3 className="font-bold text-khodiyar-blue mb-1">Our Location</h3>
-                  <p className="text-sm text-khodiyar-gray">123 Main Street, Ahmedabad, Gujarat 380001</p>
+                  <p className="text-sm text-khodiyar-gray">
+                    I/9, Vanraj Flat, Shakti School Road,
+                    Near Chandlodia Overbridge, 
+                    Chandlodia, Ahmedabad 382481
+                  </p>
                 </div>
               </AnimatedCard>
               
@@ -47,8 +51,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h3 className="font-bold text-khodiyar-blue mb-1">Phone Number</h3>
-                  <p className="text-sm text-khodiyar-gray">+91 98765 43210</p>
-                  <p className="text-sm text-khodiyar-gray">+91 98765 12345</p>
+                  <p className="text-sm text-khodiyar-gray">+91 98985 66575</p>
                 </div>
               </AnimatedCard>
 
@@ -57,9 +60,8 @@ const ContactSection = () => {
                   <Mail className="h-6 w-6 text-khodiyar-light-blue" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-khodiyar-blue mb-1">Email Address</h3>
-                  <p className="text-sm text-khodiyar-gray">info@khodiyarcarrental.com</p>
-                  <p className="text-sm text-khodiyar-gray">bookings@khodiyarcarrental.com</p>
+                  <h3 className="font-bold text-khodiyar-blue mb-1">Owner Name</h3>
+                  <p className="text-sm text-khodiyar-gray">Yogesh Patel</p>
                 </div>
               </AnimatedCard>
               
