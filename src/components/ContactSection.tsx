@@ -1,4 +1,5 @@
-import { MapPin, Phone, Mail, Instagram } from 'lucide-react';
+
+import { MapPin, Phone, Mail, Instagram, Clock } from 'lucide-react';
 import AnimatedCard from './AnimatedCard';
 import BookingForm from './BookingForm';
 
