@@ -3,7 +3,7 @@ import { useState } from 'react';
 import AnimatedCard from './AnimatedCard';
 import { Car as CarIcon, Users, Fuel, ShieldCheck } from 'lucide-react';
 
-type CarCategory = 'all' | 'economy' | 'sedan' | 'suv' | 'luxury';
+type CarCategory = 'all' | 'sedan' | 'suv';
 
 interface Car {
   id: number;
@@ -12,6 +12,7 @@ interface Car {
   image: string;
   passengers: number;
   price: number;
+  pricePerKm: number;
   features: string[];
 }
 
@@ -23,6 +24,7 @@ const cars: Car[] = [
     image: "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     passengers: 4,
     price: 1200,
+    pricePerKm: 20,
     features: ["Air Conditioning", "Music System", "Driver"]
   },
   {
@@ -32,43 +34,8 @@ const cars: Car[] = [
     image: "https://images.unsplash.com/photo-1622095815908-3e22ced74bab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     passengers: 7,
     price: 2800,
+    pricePerKm: 25,
     features: ["Air Conditioning", "Music System", "Driver", "GPS"]
-  },
-  {
-    id: 3,
-    name: "Hyundai i10",
-    category: "economy",
-    image: "https://images.unsplash.com/photo-1549927681-0b673b8243ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    passengers: 4,
-    price: 1000,
-    features: ["Air Conditioning", "Music System", "Driver"]
-  },
-  {
-    id: 4,
-    name: "Mercedes E-Class",
-    category: "luxury",
-    image: "https://images.unsplash.com/photo-1554461225-2c1c0dfc9bc0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    passengers: 4,
-    price: 5000,
-    features: ["Air Conditioning", "Music System", "Professional Driver", "Refreshments", "Wi-Fi"]
-  },
-  {
-    id: 5,
-    name: "Honda City",
-    category: "sedan",
-    image: "https://images.unsplash.com/photo-1617813480365-238235618c2c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    passengers: 5,
-    price: 1500,
-    features: ["Air Conditioning", "Music System", "Driver", "GPS"]
-  },
-  {
-    id: 6,
-    name: "Toyota Fortuner",
-    category: "suv",
-    image: "https://images.unsplash.com/photo-1508245861283-8b7a4db871f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-    passengers: 7,
-    price: 3500,
-    features: ["Air Conditioning", "Music System", "Driver", "GPS", "Extra Luggage Space"]
   }
 ];
 
@@ -86,13 +53,13 @@ const FleetSection = () => {
           <p className="text-khodiyar-light-blue font-medium mb-2">LUXURY TRANSPORTATION</p>
           <h2 className="section-title mb-4 mx-auto">Our Premium Fleet</h2>
           <p className="text-khodiyar-gray max-w-2xl mx-auto">
-            Choose from our wide range of well-maintained vehicles to suit your needs and budget.
+            Choose from our well-maintained vehicles to suit your needs and budget.
           </p>
         </div>
 
         {/* Category Filter */}
         <div className="flex flex-wrap justify-center gap-2 mb-12">
-          {['all', 'economy', 'sedan', 'suv', 'luxury'].map((category) => (
+          {['all', 'sedan', 'suv'].map((category) => (
             <button
               key={category}
               onClick={() => setActiveCategory(category as CarCategory)}
@@ -108,7 +75,7 @@ const FleetSection = () => {
         </div>
 
         {/* Cars Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {filteredCars.map((car) => (
             <AnimatedCard 
               key={car.id}
@@ -122,7 +89,7 @@ const FleetSection = () => {
                   className="w-full h-full object-cover transition-transform duration-700 hover:scale-110" 
                 />
                 <div className="absolute top-3 right-3 bg-khodiyar-gold text-white px-3 py-1 rounded-full text-sm font-medium">
-                  ₹{car.price}/day
+                  ₹{car.pricePerKm}/km
                 </div>
               </div>
               <div className="p-6">
