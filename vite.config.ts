@@ -5,8 +5,8 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-   base: '/khodiyar-wheels-animate-glide/',
-  
+  base: '/khodiyar-wheels-animate-glide/', // ✅ Needed for GitHub Pages
+
   server: {
     host: "::",
     port: 8080,
