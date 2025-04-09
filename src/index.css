@@ -1,10 +1,13 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: 210 40% 98%;
     --foreground: 222.2 84% 4.9%;
 
     --card: 0 0% 100%;
@@ -35,19 +38,12 @@
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -97,5 +93,60 @@
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Poppins', sans-serif;
   }
+
+  h1, h2, h3, h4, h5, .font-heading {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply relative text-khodiyar-gray font-medium transition-colors hover:text-khodiyar-light-blue;
+    @apply after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-khodiyar-light-blue;
+    @apply after:transition-all after:duration-300 hover:after:w-full;
+  }
+
+  .btn-primary {
+    @apply bg-khodiyar-light-blue text-white px-6 py-3 rounded-md font-medium transition-all;
+    @apply hover:bg-khodiyar-blue hover:shadow-lg;
+  }
+
+  .btn-secondary {
+    @apply bg-khodiyar-gold text-white px-6 py-3 rounded-md font-medium transition-all;
+    @apply hover:bg-khodiyar-light-gold hover:shadow-lg;
+  }
+
+  .card {
+    @apply bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300;
+    @apply hover:shadow-xl hover:-translate-y-1;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold mb-2 text-khodiyar-blue;
+    @apply relative inline-block;
+    @apply after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-1/2 after:h-1 after:bg-khodiyar-light-blue;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-khodiyar-light-blue to-khodiyar-gold bg-clip-text text-transparent;
+  }
+
+  .animate-on-scroll {
+    @apply opacity-0;
+  }
+}
+
+.hero-bg {
+  background-image: linear-gradient(rgba(26, 31, 44, 0.7), rgba(26, 31, 44, 0.7)), url('https://images.unsplash.com/photo-1582639510494-c80b5de9f148?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.testimonial-bg {
+  background-image: linear-gradient(rgba(26, 31, 44, 0.9), rgba(26, 31, 44, 0.9)), url('https://images.unsplash.com/photo-1502877338535-766e1452684a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+  background-size: cover;
+  background-position: center;
 }
